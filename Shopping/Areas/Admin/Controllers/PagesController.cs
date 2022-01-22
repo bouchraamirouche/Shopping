@@ -3,9 +3,11 @@
 using Shopping.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Shopping.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shopping.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin,editor")]
     [Area("Admin")]
     public class PagesController : Controller
     {

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Shopping.Infrastructure;
 using Shopping.Models;
 
 namespace Shopping.Controllers
 {
+    [Authorize(Roles = "admin")]
     [Area("Admin")]
     public class CategoriesController : Controller
     {
